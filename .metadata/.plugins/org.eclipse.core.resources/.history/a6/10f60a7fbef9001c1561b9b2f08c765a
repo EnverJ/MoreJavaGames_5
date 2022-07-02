@@ -1,0 +1,26 @@
+package ezmet.enver.watchyourstep;
+
+import java.awt.BorderLayout;
+
+import javax.swing.JFrame;
+
+import ezmet.enver.mycomponents.TitleLabel;
+
+public class WatchYourStep extends JFrame {
+	private static final long serialVersionUID=1L;
+	public WatchYourStep(){
+		initGUI();
+		setTitle("Watch Your Step");
+		setResizable(false);
+		pack();
+		setLocationRelativeTo(null);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	private void initGUI(){
+		TitleLabel titleLabel=new TitleLabel("Watch Your Step");
+		add(titleLabel, BorderLayout.PAGE_START);
+	}
+
+}
