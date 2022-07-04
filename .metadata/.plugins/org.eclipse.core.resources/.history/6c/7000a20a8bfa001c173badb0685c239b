@@ -68,14 +68,6 @@ public class TerrianButton extends JButton {
 			setText("");
 		}
 	}
-	// reset terrain buttons
-	public void reset(){
-		hole=false;
-		revealed=false;
-		nextToHoles=0;
-		setText("");
-		setBackground(null);
-	}
 	
 
 }
