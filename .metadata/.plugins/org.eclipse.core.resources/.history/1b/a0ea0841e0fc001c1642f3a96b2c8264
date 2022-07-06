@@ -17,7 +17,7 @@ public class WatchYourStep extends JFrame {
 	private static final int NUMBEROFHOLES=10;
 	private TerrianButton[][] terrian=new TerrianButton[GRIDSIZE][GRIDSIZE];
 	private int totalRevealed=0;
-	Dimension size=new Dimension(GRIDSIZE,NUMBEROFHOLES);
+//	Dimension size=new Dimension(GRIDSIZE,NUMBEROFHOLES);
 
 	
 	public WatchYourStep(){
@@ -27,7 +27,6 @@ public class WatchYourStep extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setPreferredSize(size);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 

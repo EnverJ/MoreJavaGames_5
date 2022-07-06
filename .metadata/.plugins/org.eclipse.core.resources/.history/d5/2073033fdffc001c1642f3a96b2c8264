@@ -3,7 +3,6 @@ package ezmet.enver.watchyourstep;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
-import java.awt.GridLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -15,11 +14,8 @@ public class WatchYourStep extends JFrame {
 	private static final long serialVersionUID=1L;
 	private static final int GRIDSIZE=10;
 	private static final int NUMBEROFHOLES=10;
-	private TerrianButton[][] terrian=new TerrianButton[GRIDSIZE][GRIDSIZE];
+	Dimension terrain=new Dimension(GRIDSIZE,NUMBEROFHOLES);
 	private int totalRevealed=0;
-	Dimension size=new Dimension(GRIDSIZE,NUMBEROFHOLES);
-
-	
 	public WatchYourStep(){
 		initGUI();
 		setTitle("Watch Your Step");
@@ -27,7 +23,6 @@ public class WatchYourStep extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setPreferredSize(size);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
@@ -36,15 +31,6 @@ public class WatchYourStep extends JFrame {
 		add(titleLabel, BorderLayout.PAGE_START);
 		
 		JPanel centerPanel=new JPanel();
-		centerPanel.setLayout(new GridLayout(GRIDSIZE,GRIDSIZE));
-		add(centerPanel,BorderLayout.CENTER);
-		
-	for(int row=0; row<GRIDSIZE;row++){
-		for(int col=0;col<GRIDSIZE;col++){
-			terrian[row][col]=new TerrianButton(row, col);
-			centerPanel.add(terrian[row][col]);
-		}
-	}
 		
 		
 		

@@ -15,11 +15,9 @@ public class WatchYourStep extends JFrame {
 	private static final long serialVersionUID=1L;
 	private static final int GRIDSIZE=10;
 	private static final int NUMBEROFHOLES=10;
+	Dimension terrain=new Dimension(GRIDSIZE,NUMBEROFHOLES);
 	private TerrianButton[][] terrian=new TerrianButton[GRIDSIZE][GRIDSIZE];
 	private int totalRevealed=0;
-	Dimension size=new Dimension(GRIDSIZE,NUMBEROFHOLES);
-
-	
 	public WatchYourStep(){
 		initGUI();
 		setTitle("Watch Your Step");
@@ -27,7 +25,6 @@ public class WatchYourStep extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setPreferredSize(size);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
@@ -41,8 +38,8 @@ public class WatchYourStep extends JFrame {
 		
 	for(int row=0; row<GRIDSIZE;row++){
 		for(int col=0;col<GRIDSIZE;col++){
-			terrian[row][col]=new TerrianButton(row, col);
-			centerPanel.add(terrian[row][col]);
+			terrain[row][col]=new TerrianButton(row, col);
+			centerPanel.add(terrain[row][col]);
 		}
 	}
 		

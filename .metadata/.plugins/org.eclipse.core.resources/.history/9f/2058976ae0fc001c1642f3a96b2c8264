@@ -13,7 +13,7 @@ import ezmet.enver.mycomponents.TitleLabel;
 
 public class WatchYourStep extends JFrame {
 	private static final long serialVersionUID=1L;
-	private static final int GRIDSIZE=10;
+	private static final int GRIDSIZE=100;
 	private static final int NUMBEROFHOLES=10;
 	private TerrianButton[][] terrian=new TerrianButton[GRIDSIZE][GRIDSIZE];
 	private int totalRevealed=0;

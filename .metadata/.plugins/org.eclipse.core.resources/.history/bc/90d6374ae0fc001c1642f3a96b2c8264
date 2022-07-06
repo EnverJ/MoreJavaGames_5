@@ -27,7 +27,6 @@ public class WatchYourStep extends JFrame {
 		pack();
 		setLocationRelativeTo(null);
 		setVisible(true);
-		setPreferredSize(size);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 	}
 
