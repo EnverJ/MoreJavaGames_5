@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.GridLayout;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,6 +23,7 @@ public class WatchYourStep extends JFrame {
 	
 	public WatchYourStep(){
 		initGUI();
+		setHoles();
 		setTitle("Watch Your Step");
 		setResizable(false);
 		pack();
@@ -48,6 +50,20 @@ public class WatchYourStep extends JFrame {
 		
 		
 		
+	}
+	public void setHoles(){
+		Random rand=new Random();
+		for(int i=0;i<NUMBEROFHOLES;i++){
+			int pickRow=rand.nextInt(GRIDSIZE);
+			int pickCol=rand.nextInt(GRIDSIZE);
+			while(terrian[pickRow][pickCol].hasHole()){
+				pickRow=rand.nextInt(GRIDSIZE);
+				pickCol=rand.nextInt(GRIDSIZE);
+			}
+			terrian[pickRow][pickCol].setHole(true);
+			terrian[pickRow][pickCol].reveal(true);
+			
+		}
 	}
 	
   public static void main (String[] args){
