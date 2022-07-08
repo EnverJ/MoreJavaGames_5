@@ -20,7 +20,7 @@ public class WatchYourStep extends JFrame {
 	private int totalRevealed=0;
 	Dimension size=new Dimension(GRIDSIZE,NUMBEROFHOLES);
 
-
+	
 	public WatchYourStep(){
 		initGUI();
 		setHoles();
@@ -36,20 +36,20 @@ public class WatchYourStep extends JFrame {
 	private void initGUI(){
 		TitleLabel titleLabel=new TitleLabel("Watch Your Step");
 		add(titleLabel, BorderLayout.PAGE_START);
-
+		
 		JPanel centerPanel=new JPanel();
 		centerPanel.setLayout(new GridLayout(GRIDSIZE,GRIDSIZE));
 		add(centerPanel,BorderLayout.CENTER);
-
-		for(int row=0; row<GRIDSIZE;row++){
-			for(int col=0;col<GRIDSIZE;col++){
-				terrian[row][col]=new TerrianButton(row, col);
-				centerPanel.add(terrian[row][col]);
-			}
+		
+	for(int row=0; row<GRIDSIZE;row++){
+		for(int col=0;col<GRIDSIZE;col++){
+			terrian[row][col]=new TerrianButton(row, col);
+			centerPanel.add(terrian[row][col]);
 		}
-
-
-
+	}
+		
+		
+		
 	}
 	public void setHoles(){
 		Random rand=new Random();
@@ -62,21 +62,13 @@ public class WatchYourStep extends JFrame {
 			}
 			terrian[pickRow][pickCol].setHole(true);
 			terrian[pickRow][pickCol].reveal(true);
-			addToNeighborsHoleCount(pickRow,pickCol);
-
+			
 		}
 	}
-
-	private void addToNeighborsHoleCount(int pickRow, int pickCol) {
+	
+  public static void main (String[] args){
 		// TODO Auto-generated method stub
-
-	}
-
-
-
-	public static void main (String[] args){
-		// TODO Auto-generated method stub
-
+		
 		try {
 			String className = UIManager.getCrossPlatformLookAndFeelClassName();
 			UIManager.setLookAndFeel(className);
@@ -93,6 +85,6 @@ public class WatchYourStep extends JFrame {
 			}
 		});
 
-	}
+  }
 
 }
