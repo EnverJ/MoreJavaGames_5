@@ -67,27 +67,12 @@ public class WatchYourStep extends JFrame {
 		}
 	}
 
-	private void addToNeighborsHoleCount(int row, int col) {
-		// add 8 times
-		addToHoleCount(row-1, col);
-		addToHoleCount(row-1, col-1);
-		addToHoleCount(row-1, col+1);
-		addToHoleCount(row, col-1);
-		addToHoleCount(row, col+1);
-		addToHoleCount(row+1, col);
-		addToHoleCount(row+1, col-1);
-		addToHoleCount(row+1, col+1);
-
-	}
-
-	private void addToHoleCount(int row, int col) {
+	private void addToNeighborsHoleCount(int pickRow, int pickCol) {
 		// 
-		if(row>-1&&row<GRIDSIZE&&col>-1&&col<GRIDSIZE){
-			terrian[row][col].increaseHoleCount();
-			terrian[row][col].reveal(true);
-		}
-		
+
 	}
+
+
 
 	public static void main (String[] args){
 		// TODO Auto-generated method stub
