@@ -1,7 +1,0 @@
-package ezmet.enver.watchyourstep;
-
-import javax.swing.JButton;
-
-public class TerrianButton extends JButton {
-
-}
