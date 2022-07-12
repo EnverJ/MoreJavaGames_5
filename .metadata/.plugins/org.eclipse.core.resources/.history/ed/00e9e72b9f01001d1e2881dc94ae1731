@@ -47,7 +47,7 @@ public class WatchYourStep extends JFrame {
 			for(int col=0;col<GRIDSIZE;col++){
 				terrian[row][col]=new TerrianButton(row, col);
 				terrian[row][col].addActionListener(new ActionListener() {
-
+					
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						// 
@@ -55,13 +55,13 @@ public class WatchYourStep extends JFrame {
 						int row=button.getRow();
 						int col=button.getCol();
 						clickedTerriain(row, col);
-
+						
 					}
 				});
 				centerPanel.add(terrian[row][col]);
 			}
 		}
-
+		
 
 	}
 	private void clickedTerriain(int row,int  col){
@@ -108,7 +108,7 @@ public class WatchYourStep extends JFrame {
 			terrian[row][col].increaseHoleCount();
 			terrian[row][col].reveal(true);
 		}
-
+		
 	}
 
 	public static void main (String[] args){
