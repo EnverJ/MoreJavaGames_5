@@ -66,12 +66,28 @@ public class WatchYourStep extends JFrame {
 	}
 	private void clickedTerriain(int row,int  col){
 		check(row,col);
+		checkNeighbors(row,col);
 	}
 	private void check(int row,int col){
 		if(row>-1&&row<GRIDSIZE&&col>-1&&col<GRIDSIZE
 				&&!terrian[row][col].hasHole()&&!terrian[row][col].isRevealed()){
 			terrian[row][col].reveal(true);
+			if(!terrian[row][col].isNextToHoles()) {
+				checkNeighbors(row,col);
+				
+			}
 		}
+	}
+	public void checkNeighbors(int row,int col) {
+		check(row-1,col-1);
+		check(row-1,col);
+		check(row-1,col+1);
+		check(row,col-1);
+		check(row,col+1);
+		check(row+1,col-1);
+		check(row+1,col);
+		check(row+1,col+1);
+		
 	}
 	public void setHoles(){
 		Random rand=new Random();
@@ -83,7 +99,7 @@ public class WatchYourStep extends JFrame {
 				pickCol=rand.nextInt(GRIDSIZE);
 			}
 			terrian[pickRow][pickCol].setHole(true);
-			terrian[pickRow][pickCol].reveal(true);
+		//	terrian[pickRow][pickCol].reveal(true);
 			addToNeighborsHoleCount(pickRow,pickCol);
 
 		}
@@ -106,7 +122,8 @@ public class WatchYourStep extends JFrame {
 		// 
 		if(row>-1&&row<GRIDSIZE&&col>-1&&col<GRIDSIZE){
 			terrian[row][col].increaseHoleCount();
-			terrian[row][col].reveal(true);
+			//no longer needed after neighbor check
+		//	terrian[row][col].reveal(true);
 		}
 
 	}
