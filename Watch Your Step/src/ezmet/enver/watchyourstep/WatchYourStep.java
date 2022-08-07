@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
 
@@ -65,8 +66,33 @@ public class WatchYourStep extends JFrame {
 
 	}
 	private void clickedTerriain(int row,int  col){
+		if(terrian[row][col].hasHole()) {
+			String message="Ezmet stepped into a hole. Game Over! Do you wanna paly again?";
+			promptForNewGame(message);
+			
+		}
+		else {
 		check(row,col);
 		checkNeighbors(row,col);
+		}
+	}
+	private void promptForNewGame(String message) {
+		int option=JOptionPane.showConfirmDialog(this,message,"paly again?", JOptionPane.YES_NO_OPTION);
+		if(option==JOptionPane.YES_OPTION) {
+			newGame();
+		}
+		else {
+			System.exit(0);
+		}
+	}
+	private void newGame() {
+		for(int row=0;row<GRIDSIZE;row++) {
+			for(int col=0;col<GRIDSIZE;col++) {
+				terrian[row][col].reset();
+			}
+		}
+		setHoles();
+		totalRevealed=0;
 	}
 	private void check(int row,int col){
 		if(row>-1&&row<GRIDSIZE&&col>-1&&col<GRIDSIZE
