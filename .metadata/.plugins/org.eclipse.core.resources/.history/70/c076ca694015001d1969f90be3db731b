@@ -99,7 +99,7 @@ public class WatchYourStep extends JFrame {
 				pickCol=rand.nextInt(GRIDSIZE);
 			}
 			terrian[pickRow][pickCol].setHole(true);
-		//	terrian[pickRow][pickCol].reveal(true); // will not display the code
+		//	terrian[pickRow][pickCol].reveal(true);
 			addToNeighborsHoleCount(pickRow,pickCol);
 
 		}
