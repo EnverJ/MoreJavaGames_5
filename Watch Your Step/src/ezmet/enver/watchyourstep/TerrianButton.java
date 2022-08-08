@@ -62,6 +62,7 @@ public class TerrianButton extends JButton {
 				setText(""+nextToHoles);
 			}
 			}
+	//		setFocusPainted(false);
 			
 		}
 		else{
