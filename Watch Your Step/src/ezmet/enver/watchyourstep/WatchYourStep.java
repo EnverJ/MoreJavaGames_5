@@ -88,7 +88,6 @@ public class WatchYourStep extends JFrame {
 		for(int row=0;row<GRIDSIZE;row++) {
 			for(int col=0;col<GRIDSIZE;col++) {
 				if(terrian[row][col].hasHole()) {
-					
 					terrian[row][col].reveal(true);
 				}
 			}

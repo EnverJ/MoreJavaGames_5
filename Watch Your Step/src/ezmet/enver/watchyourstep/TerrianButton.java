@@ -62,13 +62,14 @@ public class TerrianButton extends JButton {
 				setText(""+nextToHoles);
 			}
 			}
-	//		setFocusPainted(false);  rework on this step
+	//	setFocusPainted(false);
 			
 		}
 		else{
 			setBackground(null);
 			setText("");
 		}
+		setFocusPainted(false);
 	}
 	// reset terrain buttons
 	public void reset(){
