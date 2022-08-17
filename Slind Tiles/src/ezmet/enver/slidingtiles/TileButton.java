@@ -55,8 +55,9 @@ public class TileButton extends JButton {
 			setIcon(null);
 			
 		}else {
-			setIcon(imageIcon);
+			setIcon(imageIcon); 
 		}
+		// this is a change
 		
 	}
 
