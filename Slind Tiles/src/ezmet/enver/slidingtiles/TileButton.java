@@ -43,7 +43,7 @@ public class TileButton extends JButton {
 		return imageId;
 	}
 	
-	public void setTileSizeAndMaxTiles(int size,int max) {
+	public static void setTileSizeAndMaxTiles(int size,int max) {
 		tileSize=size;
 		maxTiles=max;
 	}
@@ -57,7 +57,6 @@ public class TileButton extends JButton {
 		}else {
 			setIcon(imageIcon); 
 		}
-		// this is a change
 		
 	}
 
