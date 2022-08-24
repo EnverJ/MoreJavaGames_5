@@ -48,7 +48,7 @@ public class SlidingTiles extends JFrame {
 		
 		//main window
 		divideImage();
-		// buttons 
+		
 		
 		
 
