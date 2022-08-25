@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -17,7 +18,7 @@ import ezmet.enver.mycomponents.TitleLabel;
 public class SlidingTiles extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final String FILENAME = "slidingTileImage.jpg";
+	private static final String FILENAME = "slidingTilesImage.jpg";
 	private int tileSize = 50;
 	private int gridSize = 4;
 	private BufferedImage image = null;
@@ -50,6 +51,8 @@ public class SlidingTiles extends JFrame {
 		divideImage();
 		
 		
+		//button panel
+		
 		
 
 	}
@@ -57,6 +60,22 @@ public class SlidingTiles extends JFrame {
 	private void divideImage() {
 		centerPanel.setLayout(new GridLayout(gridSize,gridSize));
 		add(centerPanel,BorderLayout.CENTER);
+		
+		int imageId=0;
+		
+		for(int row=0;row<gridSize;row++) {
+			for(int col=0;col<gridSize;col++) {
+				int x=col*gridSize;
+				int y=row*gridSize;
+				
+				BufferedImage subImage=image.getSubimage(x, y, tileSize,tileSize);
+				ImageIcon imageIcon=new ImageIcon(subImage);
+				tile[row][col]=new TileButton(imageIcon,imageId,row,col);
+				centerPanel.add(tile[row][col]);
+				imageId++;
+			}
+			
+		}
 	}
 
 	public static void main(String[] args) {
