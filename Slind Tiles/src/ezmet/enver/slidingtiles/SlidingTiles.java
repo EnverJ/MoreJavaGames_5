@@ -52,7 +52,7 @@ public class SlidingTiles extends JFrame {
 		
 		
 		//button panel
-		// please review your code after completed
+		// 
 		
 		
 
