@@ -18,7 +18,7 @@ import ezmet.enver.mycomponents.TitleLabel;
 public class SlidingTiles extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	private static final String FILENAME = "slidingTilesImage.jpg";
+	private static final String FILENAME = "/Users/enverjume/git/MoreJavaGames/Slind Tiles/src/MoreDIYJava/copy/slidingTilesImage.jpg";
 	private int tileSize = 50;
 	private int gridSize = 4;
 	private BufferedImage image = null;
@@ -31,7 +31,7 @@ public class SlidingTiles extends JFrame {
 			TileButton.setTileSizeAndMaxTiles(tileSize, gridSize * gridSize);
 			initGUI();
 			setTitle("Sliding Tiles");
-			setResizable(true);
+			setResizable(false);
 			pack();
 			setLocationRelativeTo(null);
 			setVisible(true);
@@ -52,7 +52,6 @@ public class SlidingTiles extends JFrame {
 		
 		
 		//button panel
-		//  Ezmet
 		
 		
 
@@ -61,6 +60,7 @@ public class SlidingTiles extends JFrame {
 	private void divideImage() {
 		centerPanel.setLayout(new GridLayout(gridSize,gridSize));
 		add(centerPanel,BorderLayout.CENTER);
+		centerPanel.removeAll();
 		
 		int imageId=0;
 		
@@ -75,6 +75,7 @@ public class SlidingTiles extends JFrame {
 				centerPanel.add(tile[row][col]);
 				imageId++;
 			}
+			centerPanel.revalidate();
 			
 		}
 	}
